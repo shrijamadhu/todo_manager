@@ -19,10 +19,6 @@ class UsersController < ApplicationController
     email = params[:email]
     password = params[:password]
     new_user = User.find_by(email: email,password: password)
-    if !new_user
-      render plain: "false"
-    else
-      render plain: "true"
-    end
+    render plain: new_user.present?
   end
 end
