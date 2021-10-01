@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo Management App</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="todo-app.css">
+</head>
+<body>
+  <article>
+    <h1 class="Todo-start"> My Todo List</h1>
+    <section class="Todo-start-section">
+       <input class="Todo-text" type="text" placeholder="what's next?" />
+       <input class="Todo-date" type="date" />
+       <input class="Todo-add-button" type="button"  value="ADD"  />
+    </section>
+    <section class="Todo-section">
+      <div class="Todo-section-heading">
+        <h2 class="Todo-section-title">Due Today </h2>
+        <p class="Todo-count">0/4</p>
+      </div>
+      <div class="Todo-section-heading">
+        <p><input type="checkbox" >Submit Saas Project 201</p>
+        <p class="Todo-overdue">Overdue</p>
+      </div>
+      <div class="Todo-section-heading">
+        <p><input type="checkbox" >Call Accountant</p>
+        <p><img class ="Todo-delete" src="/delete.png" /></p>
+      </div>
+    </section>
+    <section class="Todo-section">
+      <div class="Todo-section-heading">
+        <h2 class="Todo-section-title">Due Tommorrow </h2>
+        <p class="Todo-count">0/3</p>
+      </div>
+      <p><input type="checkbox" >Buy Groceries</p>
+      <p><input type="checkbox" >Pay Rent</p>
+    </section>
+    <section class="Todo-section">
+      <div class="Todo-section-heading">
+        <h2 class="Todo-section-title">Remaining</h2>
+        <p class="Todo-count">0/3</p>
+      </div>
+      <p><input type="checkbox" >Buy Vegetables</p>
+      <p><input type="checkbox" >Pay Taxes</p>
+    </section>
+  </article>
+</body>
+</html>

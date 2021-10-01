@@ -1,0 +1,81 @@
+body {
+  font-family: Open-sans, sans-serif;
+  max-width: 460px;
+  margin: 0 auto;
+  margin-top: 32px;
+  color: #435c52;
+}
+.Todo-start {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.Todo-start-section {
+  display: flex;
+  height: 32px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+.Todo-text {
+  border-radius: 4px;
+  margin-right: 10px;
+  border: 1px solid grey;
+  padding: 6px 12px;
+}
+.Todo-date {
+  border-radius: 4px;
+  margin-right: 10px;
+  border: 1px solid grey;
+  padding: 6px 12px;
+}
+.Todo-add-button {
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: seagreen;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+}
+
+.Todo-section {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.Todo-section-heading {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.Todo-section-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.Todo-count {
+  margin-left: 5px;
+  font-size: 12px;
+}
+p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-left: 32px;
+}
+
+.Todo-overdue {
+  color: red;
+}
+
+.Todo-section-body {
+  display: flex;
+  margin-bottom: 16px;
+  margin-left: 32px;
+}
+
+.Todo-count {
+  align-items: inherit;
+}
+.Todo-overdue {
+  color: red;
+}
+.Todo-delete {
+  visibility: visible;
+  width: 16px;
+}
