@@ -54,24 +54,25 @@ body {
   font-size: 12px;
 }
 .Todo-section-container {
+  display: flex;
   font-size: 14px;
-}
-p {
-  font-size: 14px;
-  line-height: 1.8;
-  margin-left: 32px;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .Todo-overdue {
   color: red;
+  margin-left: 10px;
 }
 
 .Todo-count {
   align-items: inherit;
 }
 
-p:hover {
-  background-color: rgb(197, 235, 227);
+.Todo-section-container:hover {
+  background-color: #f1edf7;
   cursor: pointer;
 }
 
@@ -83,6 +84,6 @@ p:hover {
   margin-left: 10px;
 }
 
-.Todo-section-heading:hover .Todo-delete {
+.Todo-section-container:hover .Todo-delete {
   visibility: visible;
 }
