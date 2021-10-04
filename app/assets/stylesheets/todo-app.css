@@ -9,7 +9,7 @@ body {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .Todo-start-section {
   display: flex;
@@ -42,9 +42,8 @@ body {
   margin-bottom: 10px;
 }
 .Todo-section-heading {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 2px 8px;
   margin-right: 5px;
 }
 .Todo-section-title {
@@ -56,24 +55,24 @@ body {
   font-size: 12px;
 }
 .Todo-section-container {
-  display: flex;
   font-size: 14px;
-  align-items: center;
+  line-height: 1.7;
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-.Todo-overdue {
-  color: red;
+.Todo-section-items {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+}
+.Todo-section-item-date {
+  font-size: 10px;
   margin-left: 10px;
+  color: rgb(122, 122, 231);
 }
 
-.Todo-count {
-  align-items: inherit;
-}
-
-.Todo-section-container:hover {
+.Todo-section-items:hover {
   background-color: #f1edf7;
   cursor: pointer;
 }
@@ -86,6 +85,6 @@ body {
   margin-left: 10px;
 }
 
-.Todo-section-container:hover .Todo-delete {
+.Todo-section-items:hover .Todo-delete {
   visibility: visible;
 }
