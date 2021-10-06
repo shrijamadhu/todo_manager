@@ -10,8 +10,8 @@
         <label class="Todo-section-items">
         <% if todo.completed%>
           <% if section_title!="Overdue"%>
-           <p style="text-decoration: line-through">
-               <input type="checkbox"  id="check" checked="checked" ><%=todo.todo_text%>
+           <p class="container" style="text-decoration: line-through">
+               <input type="checkbox"  id="check" checked="checked" ><label class="checkmark" for="check"><%=todo.todo_text%></label>
            </p>
            <%if show_due_date%>
                <p class="Todo-section-item-date"><%=todo.due_date.to_s(:short)%></p>
@@ -19,7 +19,9 @@
            <a href="javascript:void(0)" class ="Todo-delete" ><img   src="trash-can-outline.svg" /></a>
            <%end%>
         <%elsif !todo.completed %>
-           <input type="checkbox" ><%=todo.todo_text%>
+        <p class="container">
+           <input type="checkbox" id="check"><label class="checkmark" for="check"><%=todo.todo_text%></label>
+           </p>
            <%if show_due_date%>
                <p class="Todo-section-item-date"><%=todo.due_date.to_s(:short)%></p>
            <%end%>
