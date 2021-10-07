@@ -3,13 +3,13 @@
         <h2 class="Todo-section-title"><%= section_title%></h2>
         <p class="Todo-count"><%=todos.completed.count%>/<%=todos.count%></p>
       </div>
-      <%todos=todos.reject{|todo| section_title=="Overdue" && todo.completed}%>
+
       <%todos.each do|todo|%>
 
       <div class="Todo-section-container">
         <label class="Todo-section-items">
         <% if todo.completed%>
-          <% if section_title!="Overdue"%>
+
            <p style="text-decoration: line-through">
                <input type="checkbox"  id="check" checked="checked" ><label for="check"><%=todo.todo_text%></label>
            </p>
@@ -17,8 +17,8 @@
                <p class="Todo-section-item-date"><%=todo.due_date.to_s(:short)%></p>
            <%end%>
            <a href="javascript:void(0)" class ="Todo-delete" ><img   src="trash-can-outline.svg" /></a>
-           <%end%>
-        <%elsif !todo.completed %>
+
+        <%else%>
         <p>
            <input type="checkbox" id="check"><label for="check"><%=todo.todo_text%></label>
            </p>
