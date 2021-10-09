@@ -4,31 +4,27 @@
         <p class="Todo-count"><%=todos.completed.count%>/<%=todos.count%></p>
       </div>
 
-      <%todos.each do|todo|%>
+      <ul>
+         <%todos.each do|todo|%>
+            <li class="Todo-Item">
+                <label class="Todo-Item-container">
+                      <%= form_with(url: "/todos/#{todo.id}",method: "put") do%>
+                         <%= check_box_tag("completed", value = nil, checked = todo.completed ,
+                         options = {class: "Todo-Item-checkbox",onclick: "this.form.submit()"}) %>
+                      <%end%>
+                         <p class='<%= todo.completed ? "Todo-Item-completedtext" : "" %>' >
+                            <%=todo.todo_text%>
+                         </p>
+                         <%if show_due_date%>
+                            <p class="Todo-section-item-date">
+                                <%=todo.due_date.to_s(:short)%></p>
+                         <%end%>
+                        <%= form_with(url: "/todos/#{todo.id}",method: "delete") do%>
+                          <%= image_submit_tag("trash-can-outline.svg", options = {class: "Todo-delete"})%>
+                        <%end%>
 
-      <div class="Todo-section-container">
-        <label class="Todo-section-items">
-        <% if todo.completed%>
-
-           <p style="text-decoration: line-through">
-               <input type="checkbox"  id="check" checked="checked" ><label for="check"><%=todo.todo_text%></label>
-           </p>
-           <%if show_due_date%>
-               <p class="Todo-section-item-date"><%=todo.due_date.to_s(:short)%></p>
-           <%end%>
-           <a href="javascript:void(0)" class ="Todo-delete" ><img   src="trash-can-outline.svg" /></a>
-
-        <%else%>
-        <p>
-           <input type="checkbox" id="check"><label for="check"><%=todo.todo_text%></label>
-           </p>
-           <%if show_due_date%>
-               <p class="Todo-section-item-date"><%=todo.due_date.to_s(:short)%></p>
-           <%end%>
-           <a href="javascript:void(0)" class ="Todo-delete" ><img   src="trash-can-outline.svg" /></a>
-        <%end%>
-        </label>
-
-      </div>
-      <%end%>
+                    </label>
+                 </li>
+               <%end%>
+               </ul>
 </section>
