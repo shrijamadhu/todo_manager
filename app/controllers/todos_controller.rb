@@ -1,7 +1,6 @@
 class TodosController < ApplicationController
 
   def index
-    # render plain: Todo.order(:due_date).map{|todo| todo.to_pleasant_string}.join("\n")
     render "index"
   end
   def show
@@ -14,7 +13,6 @@ class TodosController < ApplicationController
     due_date = DateTime.parse(params[:due_date])
     new_todo = Todo.create!(todo_text: todo_text,due_date: due_date,completed: false)
     redirect_to todos_path
-    # render plain: "hey! created new todo with id #{new_todo.id}"
   end
   def update
     id = params[:id]
@@ -23,7 +21,6 @@ class TodosController < ApplicationController
     new_todo.completed = completed
     new_todo.save!
     redirect_to todos_path
-    # render plain: "update done for id #{id}"
   end
   def destroy
     id = params[:id]
@@ -31,5 +28,4 @@ class TodosController < ApplicationController
     todo.destroy
     redirect_to todos_path
   end
-
 end
