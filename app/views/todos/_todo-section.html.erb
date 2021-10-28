@@ -26,7 +26,8 @@
                             </p>
                          <% end %>
                          <%= form_with(url: "/todos/#{todo.id}",method: "delete") do %>
-                             <%= image_submit_tag("trash-can-outline.svg", options = {class: "Todo-delete"}) %>
+                             <%= image_submit_tag("trash-can-outline.svg",
+                                 options = {class: "Todo-delete"}) %>
                          <% end %>
                 </label>
             </li>

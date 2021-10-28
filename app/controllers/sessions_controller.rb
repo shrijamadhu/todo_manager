@@ -9,7 +9,13 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to "/"
     else
-      flash[:error]="Your Login attempt was invalid.Please retry."
+      if !params[:email].present?
+        flash[:error]="Email can't be Empty"
+      elsif !params[:password].present?
+        flash[:error]="Password can't be Empty"
+      else
+        flash[:error]="Invalid Login attempt.Please retry."
+      end
       redirect_to new_sessions_path
     end
   end

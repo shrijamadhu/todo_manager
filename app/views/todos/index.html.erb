@@ -4,9 +4,9 @@
                   class: "Todo-start-section") do %>
       <%= text_field_tag("todo_text",value = nil,
                          options={placeholder: "whats next?",
-                         class: "Todo-text"})
+                         class: "Todo-text" ,autofocus: "autofocus"})
       %>
-      <%=date_field_tag("due_date",value = nil,
+      <%= date_field_tag("due_date",value = nil,
                         options = {class: "Todo-date"}) %>
       <%= button_tag("ADD",
                      options = {class: "Todo-add-button"}) %>
