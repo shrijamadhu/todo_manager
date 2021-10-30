@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
   skip_before_action :ensure_user_logged_in
-  def new
 
+  def new
   end
+
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
@@ -10,11 +11,11 @@ class SessionsController < ApplicationController
       redirect_to "/"
     else
       if !params[:email].present?
-        flash[:error]="Email can't be Empty"
+        flash[:error] = "Email can't be Empty"
       elsif !params[:password].present?
-        flash[:error]="Password can't be Empty"
+        flash[:error] = "Password can't be Empty"
       else
-        flash[:error]="Invalid Login attempt.Please retry."
+        flash[:error] = "Invalid Login attempt.Please retry."
       end
       redirect_to new_sessions_path
     end
@@ -25,4 +26,5 @@ class SessionsController < ApplicationController
     @current_user = nil
     redirect_to "/"
   end
+
 end

@@ -7,9 +7,10 @@
                          class: "Todo-text" ,autofocus: "autofocus"})
       %>
       <%= date_field_tag("due_date",value = nil,
-                        options = {class: "Todo-date"}) %>
-      <%= button_tag("ADD",
-                     options = {class: "Todo-add-button"}) %>
+                        options = {class: "Todo-date"})
+      %>
+      <%= button_tag("ADD",options = {class: "Todo-add-button"})
+      %>
     <% end %>
 
  <%= render partial: "todo-section",locals: {
@@ -17,11 +18,13 @@
    todos: @todos.overdue,
    show_due_date: true
    }%>
+
  <%= render partial: "todo-section",locals: {
    section_title: "Due Today",
    todos: @todos.due_today,
    show_due_date: false
    }%>
+
  <%= render partial: "todo-section",locals: {
    section_title: "Due Later",
    todos: @todos.due_later,

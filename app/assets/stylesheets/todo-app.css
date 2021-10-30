@@ -108,7 +108,6 @@ input[type="checkbox"] {
   appearance: none;
   border-radius: 3px;
   border: 1px solid grey;
-
   box-shadow: none;
   font-size: 1em;
 }
