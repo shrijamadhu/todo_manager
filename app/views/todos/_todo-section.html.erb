@@ -11,26 +11,25 @@
       <ul>
          <% todos.each do|todo| %>
             <li class="Todo-Item">
-                <label class="Todo-Item-container">
-                      <%= form_with(url: "/todos/#{todo.id}",method: "put") do %>
-                         <%= check_box_tag("completed", value = nil, checked = todo.completed ,
-                         options = {class: "Todo-Item-checkbox",onclick: "this.form.submit()"})
-                         %>
-                      <% end %>
-                         <p class='<%= todo.completed ? "Todo-Item-completedtext" : "" %>' >
-                            <%= todo.todo_text %>
-                         </p>
-                         <% if show_due_date %>
-                            <p class="Todo-section-item-date">
-                                <%= todo.due_date.to_s(:short) %>
-                            </p>
-                         <% end %>
-
-                         <%= form_with(url: "/todos/#{todo.id}",method: "delete") do %>
-                             <%= image_submit_tag("trash-can-outline.svg",
-                                 options = {class: "Todo-delete"}) %>
-                         <% end %>
-                </label>
+               <label class="Todo-Item-container">
+                     <%= form_with(url: "/todos/#{todo.id}",method: "put") do %>
+                        <%= check_box_tag("completed", value = nil, checked = todo.completed ,
+                        options = {class: "Todo-Item-checkbox",onclick: "this.form.submit()"})
+                        %>
+                     <% end %>
+                     <p class='<%= todo.completed ? "Todo-Item-completedtext" : "" %>' >
+                           <%= todo.todo_text %>
+                     </p>
+                     <% if show_due_date %>
+                        <p class="Todo-section-item-date">
+                              <%= todo.due_date.to_s(:short) %>
+                        </p>
+                     <% end %>
+                     <%= form_with(url: "/todos/#{todo.id}",method: "delete") do %>
+                        <%= image_submit_tag("trash-can-outline.svg",
+                            options = {class: "Todo-delete"}) %>
+                     <% end %>
+               </label>
             </li>
          <% end %>
       </ul>
